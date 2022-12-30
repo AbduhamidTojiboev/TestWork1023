@@ -1,0 +1,3047 @@
+{
+	"info": {
+		"_postman_id": "61e280e4-80fe-4f47-8b12-4dcd0006872c",
+		"name": "TestWork1023",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "9825114"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "email",
+									"value": "admin@mail.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "password",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{server.local}}/api/{{version}}/auth/login",
+							"host": [
+								"{{server.local}}"
+							],
+							"path": [
+								"api",
+								"{{version}}",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Login",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "email",
+											"value": "admin@mail.com",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "password",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{server.local}}/api/{{version}}/auth/login",
+									"host": [
+										"{{server.local}}"
+									],
+									"path": [
+										"api",
+										"{{version}}",
+										"auth",
+										"login"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Fri, 30 Dec 2022 06:31:55 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Apache"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=120, max=1000"
+								},
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"success\",\n    \"user\": {\n        \"id\": 1,\n        \"name\": \"Admin\",\n        \"email\": \"admin@mail.com\",\n        \"email_verified_at\": null,\n        \"created_at\": \"2022-12-30T05:50:48.000000Z\",\n        \"updated_at\": \"2022-12-30T05:50:48.000000Z\"\n    },\n    \"authorisation\": {\n        \"token\": \"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vdGVzdHdvcmsxMDIzL2FwaS92MS9hdXRoL2xvZ2luIiwiaWF0IjoxNjcyMzgxOTE1LCJleHAiOjE2NzIzODU1MTUsIm5iZiI6MTY3MjM4MTkxNSwianRpIjoidXZmWHB3cW9sanVWYmlkWCIsInN1YiI6IjEiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.N-oV8rbHQZJA8w2MkTurIQFq-e-aGSlezm2HOsVUCvw\",\n        \"type\": \"bearer\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Me",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{server.local}}/api/{{version}}/auth/me",
+							"host": [
+								"{{server.local}}"
+							],
+							"path": [
+								"api",
+								"{{version}}",
+								"auth",
+								"me"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Me",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{server.local}}/api/{{version}}/auth/me",
+									"host": [
+										"{{server.local}}"
+									],
+									"path": [
+										"api",
+										"{{version}}",
+										"auth",
+										"me"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Fri, 30 Dec 2022 06:35:24 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Apache"
+								},
+								{
+									"key": "Vary",
+									"value": "Authorization"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=120, max=993"
+								},
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"success\",\n    \"user\": {\n        \"id\": 1,\n        \"name\": \"Admin\",\n        \"email\": \"admin@mail.com\",\n        \"email_verified_at\": null,\n        \"created_at\": \"2022-12-30T05:50:48.000000Z\",\n        \"updated_at\": \"2022-12-30T05:50:48.000000Z\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Logout",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{server.local}}/api/{{version}}/auth/logout",
+							"host": [
+								"{{server.local}}"
+							],
+							"path": [
+								"api",
+								"{{version}}",
+								"auth",
+								"logout"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Logout",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{server.local}}/api/{{version}}/auth/logout",
+									"host": [
+										"{{server.local}}"
+									],
+									"path": [
+										"api",
+										"{{version}}",
+										"auth",
+										"logout"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Fri, 30 Dec 2022 06:36:07 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Apache"
+								},
+								{
+									"key": "Vary",
+									"value": "Authorization"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "57"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=120, max=991"
+								},
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"success\",\n    \"message\": \"Successfully logged out\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Refresh",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{server.local}}/api/{{version}}/auth/refresh",
+							"host": [
+								"{{server.local}}"
+							],
+							"path": [
+								"api",
+								"{{version}}",
+								"auth",
+								"refresh"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Refresh",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{server.local}}/api/{{version}}/auth/refresh",
+									"host": [
+										"{{server.local}}"
+									],
+									"path": [
+										"api",
+										"{{version}}",
+										"auth",
+										"refresh"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Fri, 30 Dec 2022 06:35:35 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Apache"
+								},
+								{
+									"key": "Vary",
+									"value": "Authorization"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "58"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=120, max=992"
+								},
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"success\",\n    \"user\": {\n        \"id\": 1,\n        \"name\": \"Admin\",\n        \"email\": \"admin@mail.com\",\n        \"email_verified_at\": null,\n        \"created_at\": \"2022-12-30T05:50:48.000000Z\",\n        \"updated_at\": \"2022-12-30T05:50:48.000000Z\"\n    },\n    \"authorisation\": {\n        \"token\": \"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vdGVzdHdvcmsxMDIzL2FwaS92MS9hdXRoL3JlZnJlc2giLCJpYXQiOjE2NzIzODIwOTksImV4cCI6MTY3MjM4NTczNSwibmJmIjoxNjcyMzgyMTM1LCJqdGkiOiJtRklvQ3lKS0dPUGd4eExRIiwic3ViIjoiMSIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.rTlbe5lktK43vHG3Mzn1cbAj7ZOCvPdHXuL8fRiX7TU\",\n        \"type\": \"bearer\"\n    }\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Users",
+			"item": [
+				{
+					"name": "List",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "{{server.local}}/api/{{version}}/users",
+							"host": [
+								"{{server.local}}"
+							],
+							"path": [
+								"api",
+								"{{version}}",
+								"users"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "List",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": []
+								},
+								"url": {
+									"raw": "{{server.local}}/api/{{version}}/users",
+									"host": [
+										"{{server.local}}"
+									],
+									"path": [
+										"api",
+										"{{version}}",
+										"users"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Fri, 30 Dec 2022 06:38:18 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Apache"
+								},
+								{
+									"key": "Vary",
+									"value": "Authorization"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=120, max=1000"
+								},
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"success\",\n    \"users\": [\n        {\n            \"id\": 1,\n            \"name\": \"Admin\",\n            \"email\": \"admin@mail.com\",\n            \"email_verified_at\": null,\n            \"created_at\": \"2022-12-30T05:50:48.000000Z\",\n            \"updated_at\": \"2022-12-30T05:50:48.000000Z\"\n        },\n        {\n            \"id\": 2,\n            \"name\": \"Test\",\n            \"email\": \"Test@mail.com\",\n            \"email_verified_at\": null,\n            \"created_at\": \"2022-12-30T05:50:48.000000Z\",\n            \"updated_at\": \"2022-12-30T05:50:48.000000Z\"\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "Show",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{server.local}}/api/{{version}}/users/1",
+							"host": [
+								"{{server.local}}"
+							],
+							"path": [
+								"api",
+								"{{version}}",
+								"users",
+								"1"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Show",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{server.local}}/api/{{version}}/users/1",
+									"host": [
+										"{{server.local}}"
+									],
+									"path": [
+										"api",
+										"{{version}}",
+										"users",
+										"1"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Fri, 30 Dec 2022 07:48:41 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Apache"
+								},
+								{
+									"key": "Vary",
+									"value": "Authorization"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "58"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=120, max=990"
+								},
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"success\",\n    \"user\": {\n        \"id\": 1,\n        \"name\": \"Admin\",\n        \"email\": \"admin@mail.com\",\n        \"email_verified_at\": null,\n        \"created_at\": \"2022-12-30T05:50:48.000000Z\",\n        \"updated_at\": \"2022-12-30T05:50:48.000000Z\",\n        \"roles\": [\n            {\n                \"id\": 1,\n                \"name\": \"sadmin\",\n                \"display_name\": \"Администратор\",\n                \"description\": null,\n                \"created_at\": \"2022-12-30T05:50:48.000000Z\",\n                \"updated_at\": \"2022-12-30T05:50:48.000000Z\",\n                \"pivot\": {\n                    \"user_id\": 1,\n                    \"role_id\": 1,\n                    \"user_type\": \"App\\\\Models\\\\User\"\n                }\n            }\n        ],\n        \"permissions\": []\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Edit",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{server.local}}/api/{{version}}/users/3/edit",
+							"host": [
+								"{{server.local}}"
+							],
+							"path": [
+								"api",
+								"{{version}}",
+								"users",
+								"3",
+								"edit"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Edit",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{server.local}}/api/{{version}}/users/3/edit",
+									"host": [
+										"{{server.local}}"
+									],
+									"path": [
+										"api",
+										"{{version}}",
+										"users",
+										"3",
+										"edit"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Fri, 30 Dec 2022 07:46:49 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Apache"
+								},
+								{
+									"key": "Vary",
+									"value": "Authorization"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "58"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=120, max=992"
+								},
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"success\",\n    \"roles\": {\n        \"1\": \"Администратор\"\n    },\n    \"permissions\": {\n        \"1\": \"Пользователи : Раздел\\\\Список\",\n        \"2\": \"Пользователи : Просмотр\",\n        \"3\": \"Пользователи : Добавление\",\n        \"4\": \"Пользователи : Удаление\",\n        \"5\": \"Пользователи : Редактирование\",\n        \"6\": \"Роль : Раздел\\\\Список\",\n        \"7\": \"Роль : Просмотр\",\n        \"8\": \"Роль : Добавление\",\n        \"9\": \"Роль : Удаление\",\n        \"10\": \"Роль : Редактирование\",\n        \"11\": \"Пост : Раздел\\\\Список\",\n        \"12\": \"Пост : Просмотр\",\n        \"13\": \"Пост : Добавление\",\n        \"14\": \"Пост : Удаление\",\n        \"15\": \"Пост : Редактирование\"\n    },\n    \"user\": {\n        \"id\": 3,\n        \"name\": \"Test 1\",\n        \"email\": \"test1@mail.com\",\n        \"email_verified_at\": null,\n        \"created_at\": \"2022-12-30T07:42:08.000000Z\",\n        \"updated_at\": \"2022-12-30T07:42:08.000000Z\",\n        \"roles\": [\n            {\n                \"id\": 1,\n                \"name\": \"sadmin\",\n                \"display_name\": \"Администратор\",\n                \"description\": null,\n                \"created_at\": \"2022-12-30T05:50:48.000000Z\",\n                \"updated_at\": \"2022-12-30T05:50:48.000000Z\",\n                \"pivot\": {\n                    \"user_id\": 3,\n                    \"role_id\": 1,\n                    \"user_type\": \"App\\\\Models\\\\User\"\n                }\n            }\n        ],\n        \"permissions\": [\n            {\n                \"id\": 1,\n                \"name\": \"user-list\",\n                \"display_name\": \"Пользователи : Раздел\\\\Список\",\n                \"description\": null,\n                \"created_at\": \"2022-12-30T05:50:48.000000Z\",\n                \"updated_at\": \"2022-12-30T05:50:48.000000Z\",\n                \"pivot\": {\n                    \"user_id\": 3,\n                    \"permission_id\": 1,\n                    \"user_type\": \"App\\\\Models\\\\User\"\n                }\n            },\n            {\n                \"id\": 2,\n                \"name\": \"user-show\",\n                \"display_name\": \"Пользователи : Просмотр\",\n                \"description\": null,\n                \"created_at\": \"2022-12-30T05:50:48.000000Z\",\n                \"updated_at\": \"2022-12-30T05:50:48.000000Z\",\n                \"pivot\": {\n                    \"user_id\": 3,\n                    \"permission_id\": 2,\n                    \"user_type\": \"App\\\\Models\\\\User\"\n                }\n            }\n        ]\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Create",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{server.local}}/api/{{version}}/users/create",
+							"host": [
+								"{{server.local}}"
+							],
+							"path": [
+								"api",
+								"{{version}}",
+								"users",
+								"create"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Create",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{server.local}}/api/{{version}}/users/create",
+									"host": [
+										"{{server.local}}"
+									],
+									"path": [
+										"api",
+										"{{version}}",
+										"users",
+										"create"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Fri, 30 Dec 2022 07:48:07 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Apache"
+								},
+								{
+									"key": "Vary",
+									"value": "Authorization"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=120, max=991"
+								},
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"success\",\n    \"roles\": {\n        \"1\": \"Администратор\"\n    },\n    \"permissions\": {\n        \"1\": \"Пользователи : Раздел\\\\Список\",\n        \"2\": \"Пользователи : Просмотр\",\n        \"3\": \"Пользователи : Добавление\",\n        \"4\": \"Пользователи : Удаление\",\n        \"5\": \"Пользователи : Редактирование\",\n        \"6\": \"Роль : Раздел\\\\Список\",\n        \"7\": \"Роль : Просмотр\",\n        \"8\": \"Роль : Добавление\",\n        \"9\": \"Роль : Удаление\",\n        \"10\": \"Роль : Редактирование\",\n        \"11\": \"Пост : Раздел\\\\Список\",\n        \"12\": \"Пост : Просмотр\",\n        \"13\": \"Пост : Добавление\",\n        \"14\": \"Пост : Удаление\",\n        \"15\": \"Пост : Редактирование\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{server.local}}/api/{{version}}/users/3",
+							"host": [
+								"{{server.local}}"
+							],
+							"path": [
+								"api",
+								"{{version}}",
+								"users",
+								"3"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Delete",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{server.local}}/api/{{version}}/users/4",
+									"host": [
+										"{{server.local}}"
+									],
+									"path": [
+										"api",
+										"{{version}}",
+										"users",
+										"4"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Fri, 30 Dec 2022 07:43:51 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Apache"
+								},
+								{
+									"key": "Vary",
+									"value": "Authorization"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=120, max=997"
+								},
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"success\",\n    \"message\": \"User deleted successfully\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Create",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"content-type": true
+						}
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "name",
+									"value": "Test Test",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "testtest@mail.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "password",
+									"type": "text"
+								},
+								{
+									"key": "roles_id[]",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "permissions_id[]",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "permissions_id[]",
+									"value": "2",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{server.local}}/api/{{version}}/users",
+							"host": [
+								"{{server.local}}"
+							],
+							"path": [
+								"api",
+								"{{version}}",
+								"users"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Create",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/x-www-form-urlencoded",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "name",
+											"value": "Test Test",
+											"type": "text"
+										},
+										{
+											"key": "email",
+											"value": "testtest@mail.com",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "password",
+											"type": "text"
+										},
+										{
+											"key": "roles_id[]",
+											"value": "1",
+											"type": "text"
+										},
+										{
+											"key": "permissions_id[]",
+											"value": "1",
+											"type": "text"
+										},
+										{
+											"key": "permissions_id[]",
+											"value": "2",
+											"type": "text"
+										}
+									],
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{server.local}}/api/{{version}}/users",
+									"host": [
+										"{{server.local}}"
+									],
+									"path": [
+										"api",
+										"{{version}}",
+										"users"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Fri, 30 Dec 2022 07:44:39 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Apache"
+								},
+								{
+									"key": "Vary",
+									"value": "Authorization"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "58"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=120, max=996"
+								},
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"success\",\n    \"message\": \"User created successfully\",\n    \"user\": {\n        \"name\": \"Test Test\",\n        \"email\": \"testtest@mail.com\",\n        \"updated_at\": \"2022-12-30T07:44:39.000000Z\",\n        \"created_at\": \"2022-12-30T07:44:39.000000Z\",\n        \"id\": 5\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Edit",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"content-type": true
+						}
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "name",
+									"value": "Test Test",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "testtest@mail.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "password",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "roles_id[]",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "permissions_id[]",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "permissions_id[]",
+									"value": "2",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{server.local}}/api/{{version}}/users/5",
+							"host": [
+								"{{server.local}}"
+							],
+							"path": [
+								"api",
+								"{{version}}",
+								"users",
+								"5"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Edit",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/x-www-form-urlencoded",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "name",
+											"value": "Test Test",
+											"type": "text"
+										},
+										{
+											"key": "email",
+											"value": "testtest@mail.com",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "password",
+											"type": "text"
+										},
+										{
+											"key": "roles_id[]",
+											"value": "1",
+											"type": "text"
+										},
+										{
+											"key": "permissions_id[]",
+											"value": "1",
+											"type": "text"
+										},
+										{
+											"key": "permissions_id[]",
+											"value": "2",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{server.local}}/api/{{version}}/users/5",
+									"host": [
+										"{{server.local}}"
+									],
+									"path": [
+										"api",
+										"{{version}}",
+										"users",
+										"5"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Fri, 30 Dec 2022 07:56:16 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Apache"
+								},
+								{
+									"key": "Vary",
+									"value": "Authorization"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "58"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=120, max=999"
+								},
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"success\",\n    \"message\": \"User updated successfully\",\n    \"user\": {\n        \"id\": 5,\n        \"name\": \"Test Test\",\n        \"email\": \"testtest@mail.com\",\n        \"email_verified_at\": null,\n        \"created_at\": \"2022-12-30T07:44:39.000000Z\",\n        \"updated_at\": \"2022-12-30T07:56:17.000000Z\"\n    }\n}"
+						}
+					]
+				}
+			],
+			"auth": {
+				"type": "bearer",
+				"bearer": [
+					{
+						"key": "token",
+						"value": "{{token}}",
+						"type": "string"
+					}
+				]
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "Role",
+			"item": [
+				{
+					"name": "List",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "{{server.local}}/api/{{version}}/roles",
+							"host": [
+								"{{server.local}}"
+							],
+							"path": [
+								"api",
+								"{{version}}",
+								"roles"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "List",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": []
+								},
+								"url": {
+									"raw": "{{server.local}}/api/{{version}}/roles",
+									"host": [
+										"{{server.local}}"
+									],
+									"path": [
+										"api",
+										"{{version}}",
+										"roles"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Fri, 30 Dec 2022 07:58:36 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Apache"
+								},
+								{
+									"key": "Vary",
+									"value": "Authorization"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=120, max=999"
+								},
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"success\",\n    \"roles\": [\n        {\n            \"id\": 1,\n            \"name\": \"sadmin\",\n            \"display_name\": \"Администратор\",\n            \"description\": null,\n            \"created_at\": \"2022-12-30T05:50:48.000000Z\",\n            \"updated_at\": \"2022-12-30T05:50:48.000000Z\"\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "Show",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{server.local}}/api/{{version}}/roles/1",
+							"host": [
+								"{{server.local}}"
+							],
+							"path": [
+								"api",
+								"{{version}}",
+								"roles",
+								"1"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Show",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{server.local}}/api/{{version}}/roles/1",
+									"host": [
+										"{{server.local}}"
+									],
+									"path": [
+										"api",
+										"{{version}}",
+										"roles",
+										"1"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Fri, 30 Dec 2022 07:58:58 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Apache"
+								},
+								{
+									"key": "Vary",
+									"value": "Authorization"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "58"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=120, max=998"
+								},
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"success\",\n    \"role\": {\n        \"id\": 1,\n        \"name\": \"sadmin\",\n        \"display_name\": \"Администратор\",\n        \"description\": null,\n        \"created_at\": \"2022-12-30T05:50:48.000000Z\",\n        \"updated_at\": \"2022-12-30T05:50:48.000000Z\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Edit",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{server.local}}/api/{{version}}/roles/1/edit",
+							"host": [
+								"{{server.local}}"
+							],
+							"path": [
+								"api",
+								"{{version}}",
+								"roles",
+								"1",
+								"edit"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Edit",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{server.local}}/api/{{version}}/roles/1/edit",
+									"host": [
+										"{{server.local}}"
+									],
+									"path": [
+										"api",
+										"{{version}}",
+										"roles",
+										"1",
+										"edit"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Fri, 30 Dec 2022 07:59:47 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Apache"
+								},
+								{
+									"key": "Vary",
+									"value": "Authorization"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=120, max=997"
+								},
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"success\",\n    \"$role\": {\n        \"id\": 1,\n        \"name\": \"sadmin\",\n        \"display_name\": \"Администратор\",\n        \"description\": null,\n        \"created_at\": \"2022-12-30T05:50:48.000000Z\",\n        \"updated_at\": \"2022-12-30T05:50:48.000000Z\"\n    },\n    \"permissions\": {\n        \"1\": \"Пользователи : Раздел\\\\Список\",\n        \"2\": \"Пользователи : Просмотр\",\n        \"3\": \"Пользователи : Добавление\",\n        \"4\": \"Пользователи : Удаление\",\n        \"5\": \"Пользователи : Редактирование\",\n        \"6\": \"Роль : Раздел\\\\Список\",\n        \"7\": \"Роль : Просмотр\",\n        \"8\": \"Роль : Добавление\",\n        \"9\": \"Роль : Удаление\",\n        \"10\": \"Роль : Редактирование\",\n        \"11\": \"Пост : Раздел\\\\Список\",\n        \"12\": \"Пост : Просмотр\",\n        \"13\": \"Пост : Добавление\",\n        \"14\": \"Пост : Удаление\",\n        \"15\": \"Пост : Редактирование\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Create",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{server.local}}/api/{{version}}/roles/create",
+							"host": [
+								"{{server.local}}"
+							],
+							"path": [
+								"api",
+								"{{version}}",
+								"roles",
+								"create"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Create",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{server.local}}/api/{{version}}/roles/create",
+									"host": [
+										"{{server.local}}"
+									],
+									"path": [
+										"api",
+										"{{version}}",
+										"roles",
+										"create"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Fri, 30 Dec 2022 08:00:12 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Apache"
+								},
+								{
+									"key": "Vary",
+									"value": "Authorization"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "58"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=120, max=996"
+								},
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"success\",\n    \"permissions\": {\n        \"1\": \"Пользователи : Раздел\\\\Список\",\n        \"2\": \"Пользователи : Просмотр\",\n        \"3\": \"Пользователи : Добавление\",\n        \"4\": \"Пользователи : Удаление\",\n        \"5\": \"Пользователи : Редактирование\",\n        \"6\": \"Роль : Раздел\\\\Список\",\n        \"7\": \"Роль : Просмотр\",\n        \"8\": \"Роль : Добавление\",\n        \"9\": \"Роль : Удаление\",\n        \"10\": \"Роль : Редактирование\",\n        \"11\": \"Пост : Раздел\\\\Список\",\n        \"12\": \"Пост : Просмотр\",\n        \"13\": \"Пост : Добавление\",\n        \"14\": \"Пост : Удаление\",\n        \"15\": \"Пост : Редактирование\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{server.local}}/api/{{version}}/users/3",
+							"host": [
+								"{{server.local}}"
+							],
+							"path": [
+								"api",
+								"{{version}}",
+								"users",
+								"3"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Delete",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{server.local}}/api/{{version}}/users/4",
+									"host": [
+										"{{server.local}}"
+									],
+									"path": [
+										"api",
+										"{{version}}",
+										"users",
+										"4"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Fri, 30 Dec 2022 07:43:51 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Apache"
+								},
+								{
+									"key": "Vary",
+									"value": "Authorization"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=120, max=997"
+								},
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"success\",\n    \"message\": \"User deleted successfully\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Create",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"content-type": true
+						}
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "name",
+									"value": "Test1",
+									"type": "text"
+								},
+								{
+									"key": "display_name",
+									"value": "Тест",
+									"type": "text"
+								},
+								{
+									"key": "permissions_id[]",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "permissions_id[]",
+									"value": "2",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{server.local}}/api/{{version}}/roles",
+							"host": [
+								"{{server.local}}"
+							],
+							"path": [
+								"api",
+								"{{version}}",
+								"roles"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Create",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/x-www-form-urlencoded",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "name",
+											"value": "Test1",
+											"type": "text"
+										},
+										{
+											"key": "display_name",
+											"value": "Тест",
+											"type": "text"
+										},
+										{
+											"key": "permissions_id[]",
+											"value": "1",
+											"type": "text"
+										},
+										{
+											"key": "permissions_id[]",
+											"value": "2",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{server.local}}/api/{{version}}/roles",
+									"host": [
+										"{{server.local}}"
+									],
+									"path": [
+										"api",
+										"{{version}}",
+										"roles"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Fri, 30 Dec 2022 08:27:00 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Apache"
+								},
+								{
+									"key": "Vary",
+									"value": "Authorization"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "58"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=120, max=998"
+								},
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"success\",\n    \"message\": \"Role created successfully\",\n    \"role\": {\n        \"name\": \"Test1\",\n        \"display_name\": \"Тест\",\n        \"updated_at\": \"2022-12-30T08:27:01.000000Z\",\n        \"created_at\": \"2022-12-30T08:27:01.000000Z\",\n        \"id\": 3\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Edit",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"content-type": true
+						}
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "name",
+									"value": "test",
+									"type": "text"
+								},
+								{
+									"key": "display_name",
+									"value": "Test",
+									"type": "text"
+								},
+								{
+									"key": "permissions_id[]",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "permissions_id[]",
+									"value": "4",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{server.local}}/api/{{version}}/roles/2",
+							"host": [
+								"{{server.local}}"
+							],
+							"path": [
+								"api",
+								"{{version}}",
+								"roles",
+								"2"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Edit",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/x-www-form-urlencoded",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "name",
+											"value": "test",
+											"type": "text"
+										},
+										{
+											"key": "display_name",
+											"value": "Test",
+											"type": "text"
+										},
+										{
+											"key": "permissions_id[]",
+											"value": "1",
+											"type": "text"
+										},
+										{
+											"key": "permissions_id[]",
+											"value": "4",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{server.local}}/api/{{version}}/roles/2",
+									"host": [
+										"{{server.local}}"
+									],
+									"path": [
+										"api",
+										"{{version}}",
+										"roles",
+										"2"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Fri, 30 Dec 2022 08:28:13 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Apache"
+								},
+								{
+									"key": "Vary",
+									"value": "Authorization"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "58"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=120, max=995"
+								},
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"success\",\n    \"message\": \"Role updated successfully\",\n    \"role\": {\n        \"id\": 2,\n        \"name\": \"test\",\n        \"display_name\": \"Test\",\n        \"description\": null,\n        \"created_at\": \"2022-12-30T08:19:53.000000Z\",\n        \"updated_at\": \"2022-12-30T08:28:14.000000Z\"\n    }\n}"
+						}
+					]
+				}
+			],
+			"auth": {
+				"type": "bearer",
+				"bearer": [
+					{
+						"key": "token",
+						"value": "{{token}}",
+						"type": "string"
+					}
+				]
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "Post",
+			"item": [
+				{
+					"name": "List",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "{{server.local}}/api/{{version}}/posts",
+							"host": [
+								"{{server.local}}"
+							],
+							"path": [
+								"api",
+								"{{version}}",
+								"posts"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "List",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": []
+								},
+								"url": {
+									"raw": "{{server.local}}/api/{{version}}/posts",
+									"host": [
+										"{{server.local}}"
+									],
+									"path": [
+										"api",
+										"{{version}}",
+										"posts"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Fri, 30 Dec 2022 08:30:12 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Apache"
+								},
+								{
+									"key": "Vary",
+									"value": "Authorization"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=120, max=994"
+								},
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"success\",\n    \"posts\": [\n        {\n            \"id\": 1,\n            \"title\": \"Prof.\",\n            \"content\": \"In sed architecto incidunt error pariatur molestias. Suscipit provident quas et sed delectus. Tempora repudiandae voluptates fugiat consequuntur ut. Quia nemo quaerat deserunt ut sapiente unde animi dolores. Commodi asperiores quaerat reprehenderit voluptatem incidunt. Iure quia facilis voluptate nobis quo nesciunt velit dolorem. Saepe recusandae voluptas facere illo aliquid id et mollitia. Omnis eos illo inventore in ullam sit. Nihil sit voluptates voluptas odit. Esse quos reprehenderit voluptas quos. Saepe omnis nesciunt debitis et sed. Suscipit molestias ut mollitia. Consequuntur corrupti sequi voluptatem et est. Ipsum modi voluptates consequatur. Rerum impedit et quis reiciendis. Nisi eos est blanditiis omnis quod. Rerum voluptatem et recusandae aut qui et totam. Rerum facere praesentium cumque. In optio magni molestiae sed sapiente cumque at.\",\n            \"user_id\": 2,\n            \"created_at\": \"2022-12-30T05:50:48.000000Z\",\n            \"updated_at\": \"2022-12-30T05:50:48.000000Z\"\n        },\n        {\n            \"id\": 2,\n            \"title\": \"Dr.\",\n            \"content\": \"Labore quasi unde quia quia quibusdam eaque nisi. Reiciendis nisi et ducimus placeat. Aut provident deleniti est voluptatibus. Et et natus tempora beatae. Quo consectetur et assumenda facere accusantium dolorem. Ad qui qui molestias error. Nemo in ut dolorem dolores maxime. Quos odio est quas dolor quibusdam exercitationem voluptatibus reiciendis. Est et quod itaque non ut. Magni ut et ab. Et et excepturi rem id deleniti quia molestiae. Voluptate aut qui repellat ducimus enim error quaerat. Cupiditate earum dolor consequatur et. Animi cum sint eum cupiditate distinctio minima iure quae. Amet placeat omnis sunt et. Et inventore unde consequatur ab. Placeat qui laboriosam consequuntur. Et sunt adipisci vel pariatur voluptas neque qui nisi. Earum alias nihil ratione maiores quasi suscipit ad dignissimos. Ducimus iure quis perspiciatis reiciendis. Omnis porro a sint vitae molestias est.\",\n            \"user_id\": 2,\n            \"created_at\": \"2022-12-30T05:50:48.000000Z\",\n            \"updated_at\": \"2022-12-30T05:50:48.000000Z\"\n        },\n        {\n            \"id\": 3,\n            \"title\": \"Miss\",\n            \"content\": \"Libero repudiandae et molestias sed in laudantium voluptate. Recusandae dolor fuga quo alias praesentium quia quo similique. Sint et iusto perferendis est quia. Nihil nesciunt optio vitae dolores aliquid dolore. Rem omnis sed illo accusamus quo. Non vel iure corrupti aut. Nobis a quasi molestiae et. In facere corporis est. Itaque sit fuga dolorum praesentium et. Laboriosam sint enim qui sunt. Non tempore velit consequuntur totam et aut a. Rem eaque et a. Aperiam totam est ab qui. Iste et suscipit facilis dolorem dignissimos. Distinctio dolorem aut possimus natus. Id ducimus aut aut suscipit placeat inventore ipsum. Esse iure aliquid provident sed ab architecto modi ab. Quod vitae recusandae ut dignissimos aut quia et. Nam voluptatum dignissimos culpa et. Ullam quia voluptas asperiores eum est sed ut. Quam illum quae laborum id nam corrupti. Animi voluptate autem adipisci ut eaque. Aut omnis dolorum nihil ea sed.\",\n            \"user_id\": 1,\n            \"created_at\": \"2022-12-30T05:50:48.000000Z\",\n            \"updated_at\": \"2022-12-30T05:50:48.000000Z\"\n        },\n        {\n            \"id\": 4,\n            \"title\": \"Prof.\",\n            \"content\": \"Sit ut maiores fugiat voluptatum magnam. Qui perferendis veritatis itaque aut. Rem veritatis mollitia quia voluptatem consequatur beatae. Aut laboriosam repellendus nemo distinctio qui molestias doloremque. Quo et magnam dolorum fuga illo possimus. Nisi natus cum commodi ut. Ipsam omnis qui eligendi nemo possimus animi quis sequi. Qui ex natus odio unde ipsum. Optio assumenda aut sunt ipsam assumenda nisi. Modi quia voluptas consequuntur consequatur. Est ipsum libero et nostrum. Molestiae rerum dolores odit placeat. Pariatur ut vero autem iusto cumque id et laborum. Culpa eum cum omnis voluptate rerum. Vero exercitationem eos esse ut. Voluptates cumque est eius. Et consequatur occaecati ut reiciendis aut sapiente rem ducimus. Consequatur rerum doloribus facere earum quia. Autem cupiditate nemo omnis et fuga delectus aliquam. Velit qui ea quae repellat.\",\n            \"user_id\": 2,\n            \"created_at\": \"2022-12-30T05:50:48.000000Z\",\n            \"updated_at\": \"2022-12-30T05:50:48.000000Z\"\n        },\n        {\n            \"id\": 5,\n            \"title\": \"Prof.\",\n            \"content\": \"Ab dolor enim sed nulla. Odio fugit officiis odit. Iusto dolorem sint minus illum rerum laudantium iure placeat. Repellendus sed omnis commodi quia sint. Provident consequatur in aut veniam et. Est laudantium qui eius eos delectus quis quia. Officiis veritatis molestiae velit perferendis qui praesentium architecto. Reprehenderit esse nesciunt molestias quibusdam eos. Atque ratione ratione cupiditate adipisci voluptatem. Distinctio illo qui ut dolor iure error et. Delectus iusto iusto porro voluptatem et quo. Vel harum nemo non et. Quia dolorem animi vero non. Vel voluptas veritatis facilis repellat delectus ex impedit earum. Aut molestiae ullam fugit repellat. Eveniet dolor tempora sit fugiat molestiae tempora est et. Ut perferendis beatae quisquam earum voluptates alias. Aliquam in officiis ut qui aut ratione. Aperiam et et ipsum beatae cupiditate ut fuga.\",\n            \"user_id\": 1,\n            \"created_at\": \"2022-12-30T05:50:48.000000Z\",\n            \"updated_at\": \"2022-12-30T05:50:48.000000Z\"\n        },\n        {\n            \"id\": 6,\n            \"title\": \"Dr.\",\n            \"content\": \"Ipsum deserunt cumque voluptatum molestiae quidem. Omnis quod nemo laudantium consequatur voluptatum. Pariatur odit perferendis deserunt ad quis. Mollitia fuga officia ut ducimus delectus pariatur quod. Sequi et quisquam corrupti. Officia veniam ullam quia pariatur dignissimos similique. Aut sit quia dolores nulla excepturi. Repellat corrupti voluptas inventore dolorum. Eum sunt cupiditate unde voluptatum fuga minima et. Ea omnis atque ut est deserunt similique magni. Nulla rerum expedita hic autem magni consequuntur. Animi impedit inventore unde harum. Facilis facere dolores perferendis non illo dolorem voluptatem. Temporibus qui vero delectus incidunt ut voluptatem. Sapiente quae est quasi iure aut iusto eum non. Ducimus nobis voluptas et iste laborum labore esse. Odit et debitis ipsam inventore quia. Explicabo id voluptas fugiat eum. Ratione et ut quia voluptatem odio aliquam laboriosam explicabo. Tempora ipsum ratione sint amet facere occaecati. Vel sit dolor ipsam quia.\",\n            \"user_id\": 2,\n            \"created_at\": \"2022-12-30T05:50:48.000000Z\",\n            \"updated_at\": \"2022-12-30T05:50:48.000000Z\"\n        },\n        {\n            \"id\": 7,\n            \"title\": \"Miss\",\n            \"content\": \"In soluta iste nemo et. Enim quos vitae et voluptas vel. Soluta blanditiis et natus eum. Est et perferendis nihil facilis quas aspernatur. Ducimus nesciunt vel repellendus maiores nesciunt. Et accusamus ex ab molestias numquam quidem soluta. Molestiae veritatis iure consectetur maiores eos. Consequuntur rem reiciendis autem dolorem. Qui voluptas occaecati voluptates similique porro. Debitis est debitis alias rem ipsam doloribus et mollitia. Voluptatem sequi porro error accusantium reprehenderit voluptate incidunt. Sapiente ipsam iure veniam consequatur totam. Voluptatum ut perspiciatis ipsum expedita. Rerum dolore et sint aliquam dolore ipsa. Qui at voluptatibus ipsa iusto molestiae. Necessitatibus sint ipsam consectetur quia velit eos. Atque accusantium qui molestias et. Animi omnis id accusantium eius perspiciatis sed perferendis. Temporibus eaque consequatur aut. A sequi suscipit animi asperiores.\",\n            \"user_id\": 2,\n            \"created_at\": \"2022-12-30T05:50:48.000000Z\",\n            \"updated_at\": \"2022-12-30T05:50:48.000000Z\"\n        },\n        {\n            \"id\": 8,\n            \"title\": \"Ms.\",\n            \"content\": \"Molestias illo voluptas delectus rerum non. Qui dolorum qui consequatur aut error cupiditate cum culpa. Perferendis nihil neque tenetur accusamus perferendis quasi. Iste sint tenetur doloribus. Repellat voluptatem sed ab nesciunt ut. Id aut aut quo explicabo facere. Iste fugit aut commodi voluptatem id. Ad vitae est cupiditate. Pariatur error quibusdam aperiam aut sed. Ducimus cumque dolorem et perferendis dolores modi voluptatem. Quia perspiciatis error eveniet aliquid veniam qui cum. Exercitationem reiciendis dolorem magni natus odit commodi ut. Libero consequuntur sed sunt minus tenetur qui quia. Dolores molestiae quam quae impedit optio. Aut qui sed ducimus sed in est. Consectetur exercitationem aliquid in quia ullam. Magnam et illo cum est repellat. Ipsa sit repellat dolore accusamus. Quasi ea non ad quod excepturi.\",\n            \"user_id\": 2,\n            \"created_at\": \"2022-12-30T05:50:48.000000Z\",\n            \"updated_at\": \"2022-12-30T05:50:48.000000Z\"\n        },\n        {\n            \"id\": 9,\n            \"title\": \"Mrs.\",\n            \"content\": \"Eos accusantium fuga nesciunt unde consequuntur amet provident ratione. Provident dignissimos debitis molestias totam. Nihil aut et occaecati sequi ut. Consequatur placeat vel laborum iusto dignissimos temporibus. Voluptate et est repellat sapiente. Eum ut rerum accusantium. Consequatur qui voluptatem ducimus laboriosam. Odio quisquam voluptatem dolore enim. Ipsam maiores omnis dolorum molestiae. Sit sapiente et aut cumque exercitationem aut alias beatae. Aut quis alias est facilis natus. Qui ut qui est modi qui ea. Et exercitationem eos laudantium qui. Et quia ut eius molestias molestiae. Animi vitae incidunt ratione numquam molestiae expedita iste. Sed est vel voluptatem aut non optio repudiandae. Id qui et iure. Quia quaerat veritatis modi ipsa. Iste quo veniam consequatur aspernatur in et.\",\n            \"user_id\": 1,\n            \"created_at\": \"2022-12-30T05:50:48.000000Z\",\n            \"updated_at\": \"2022-12-30T05:50:48.000000Z\"\n        },\n        {\n            \"id\": 10,\n            \"title\": \"Prof.\",\n            \"content\": \"Unde facere consequatur non corporis. Et aut dolores sit. Corrupti corrupti qui totam. Et blanditiis dolorem earum. Quos nisi dolorem molestiae. Recusandae quaerat delectus accusamus deserunt ex reiciendis velit. Excepturi expedita ab perferendis sunt. Unde fuga assumenda iusto rerum ullam aut. In molestiae repellendus cum doloremque. Ut enim et nam non commodi voluptas. Provident quae minus cum cum dolor vero. Et non aut eum quo. Distinctio voluptatem rem aut voluptatem ut aut iure repudiandae. Sed quia modi quae maiores dolor corrupti ut qui. Sed placeat aut voluptatum. Assumenda deleniti maiores labore itaque dolorem et perferendis iusto. Non veritatis fuga optio modi. Sit distinctio sunt possimus hic aut et labore. Placeat in quod non voluptas vero assumenda eos. Dolorem aut rem necessitatibus nulla. Sunt quia facere repellendus voluptas. Dolorum amet eveniet culpa harum. Quo ipsa voluptatem nostrum aliquam ad quia tempora. Quas rerum accusantium consequuntur inventore tempora.\",\n            \"user_id\": 2,\n            \"created_at\": \"2022-12-30T05:50:48.000000Z\",\n            \"updated_at\": \"2022-12-30T05:50:48.000000Z\"\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "Show",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{server.local}}/api/{{version}}/posts/1",
+							"host": [
+								"{{server.local}}"
+							],
+							"path": [
+								"api",
+								"{{version}}",
+								"posts",
+								"1"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Show",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{server.local}}/api/{{version}}/posts/1",
+									"host": [
+										"{{server.local}}"
+									],
+									"path": [
+										"api",
+										"{{version}}",
+										"posts",
+										"1"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Fri, 30 Dec 2022 08:30:37 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Apache"
+								},
+								{
+									"key": "Vary",
+									"value": "Authorization"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "58"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=120, max=993"
+								},
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"success\",\n    \"post\": {\n        \"id\": 1,\n        \"title\": \"Prof.\",\n        \"content\": \"In sed architecto incidunt error pariatur molestias. Suscipit provident quas et sed delectus. Tempora repudiandae voluptates fugiat consequuntur ut. Quia nemo quaerat deserunt ut sapiente unde animi dolores. Commodi asperiores quaerat reprehenderit voluptatem incidunt. Iure quia facilis voluptate nobis quo nesciunt velit dolorem. Saepe recusandae voluptas facere illo aliquid id et mollitia. Omnis eos illo inventore in ullam sit. Nihil sit voluptates voluptas odit. Esse quos reprehenderit voluptas quos. Saepe omnis nesciunt debitis et sed. Suscipit molestias ut mollitia. Consequuntur corrupti sequi voluptatem et est. Ipsum modi voluptates consequatur. Rerum impedit et quis reiciendis. Nisi eos est blanditiis omnis quod. Rerum voluptatem et recusandae aut qui et totam. Rerum facere praesentium cumque. In optio magni molestiae sed sapiente cumque at.\",\n        \"user_id\": 2,\n        \"created_at\": \"2022-12-30T05:50:48.000000Z\",\n        \"updated_at\": \"2022-12-30T05:50:48.000000Z\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Edit",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{server.local}}/api/{{version}}/posts/1/edit",
+							"host": [
+								"{{server.local}}"
+							],
+							"path": [
+								"api",
+								"{{version}}",
+								"posts",
+								"1",
+								"edit"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Edit",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{server.local}}/api/{{version}}/roles/1/edit",
+									"host": [
+										"{{server.local}}"
+									],
+									"path": [
+										"api",
+										"{{version}}",
+										"roles",
+										"1",
+										"edit"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Fri, 30 Dec 2022 07:59:47 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Apache"
+								},
+								{
+									"key": "Vary",
+									"value": "Authorization"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=120, max=997"
+								},
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"success\",\n    \"$role\": {\n        \"id\": 1,\n        \"name\": \"sadmin\",\n        \"display_name\": \"Администратор\",\n        \"description\": null,\n        \"created_at\": \"2022-12-30T05:50:48.000000Z\",\n        \"updated_at\": \"2022-12-30T05:50:48.000000Z\"\n    },\n    \"permissions\": {\n        \"1\": \"Пользователи : Раздел\\\\Список\",\n        \"2\": \"Пользователи : Просмотр\",\n        \"3\": \"Пользователи : Добавление\",\n        \"4\": \"Пользователи : Удаление\",\n        \"5\": \"Пользователи : Редактирование\",\n        \"6\": \"Роль : Раздел\\\\Список\",\n        \"7\": \"Роль : Просмотр\",\n        \"8\": \"Роль : Добавление\",\n        \"9\": \"Роль : Удаление\",\n        \"10\": \"Роль : Редактирование\",\n        \"11\": \"Пост : Раздел\\\\Список\",\n        \"12\": \"Пост : Просмотр\",\n        \"13\": \"Пост : Добавление\",\n        \"14\": \"Пост : Удаление\",\n        \"15\": \"Пост : Редактирование\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{server.local}}/api/{{version}}/posts/3",
+							"host": [
+								"{{server.local}}"
+							],
+							"path": [
+								"api",
+								"{{version}}",
+								"posts",
+								"3"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Delete",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{server.local}}/api/{{version}}/posts/3",
+									"host": [
+										"{{server.local}}"
+									],
+									"path": [
+										"api",
+										"{{version}}",
+										"posts",
+										"3"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Fri, 30 Dec 2022 08:31:21 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Apache"
+								},
+								{
+									"key": "Vary",
+									"value": "Authorization"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=120, max=991"
+								},
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"success\",\n    \"message\": \"Post deleted successfully\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Create",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"content-type": true
+						}
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "title",
+									"value": "Test",
+									"type": "text"
+								},
+								{
+									"key": "content",
+									"value": "In sed architecto incidunt error pariatur molestias. Suscipit provident quas et sed delectus. Tempora repudiandae voluptates fugiat consequuntur ut. Quia nemo quaerat deserunt ut sapiente unde animi dolores. Commodi asperiores quaerat reprehenderit voluptatem incidunt. Iure quia facilis voluptate nobis quo nesciunt velit dolorem. Saepe recusandae voluptas facere illo aliquid id et mollitia.",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{server.local}}/api/{{version}}/posts",
+							"host": [
+								"{{server.local}}"
+							],
+							"path": [
+								"api",
+								"{{version}}",
+								"posts"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Create",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/x-www-form-urlencoded",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "title",
+											"value": "Test",
+											"type": "text"
+										},
+										{
+											"key": "content",
+											"value": "In sed architecto incidunt error pariatur molestias. Suscipit provident quas et sed delectus. Tempora repudiandae voluptates fugiat consequuntur ut. Quia nemo quaerat deserunt ut sapiente unde animi dolores. Commodi asperiores quaerat reprehenderit voluptatem incidunt. Iure quia facilis voluptate nobis quo nesciunt velit dolorem. Saepe recusandae voluptas facere illo aliquid id et mollitia.",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{server.local}}/api/{{version}}/posts",
+									"host": [
+										"{{server.local}}"
+									],
+									"path": [
+										"api",
+										"{{version}}",
+										"posts"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Fri, 30 Dec 2022 08:33:13 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Apache"
+								},
+								{
+									"key": "Vary",
+									"value": "Authorization"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "56"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=120, max=986"
+								},
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"success\",\n    \"message\": \"Post created successfully\",\n    \"post\": {\n        \"title\": \"Test\",\n        \"content\": \"In sed architecto incidunt error pariatur molestias. Suscipit provident quas et sed delectus. Tempora repudiandae voluptates fugiat consequuntur ut. Quia nemo quaerat deserunt ut sapiente unde animi dolores. Commodi asperiores quaerat reprehenderit voluptatem incidunt. Iure quia facilis voluptate nobis quo nesciunt velit dolorem. Saepe recusandae voluptas facere illo aliquid id et mollitia.\",\n        \"user_id\": 1,\n        \"updated_at\": \"2022-12-30T08:33:14.000000Z\",\n        \"created_at\": \"2022-12-30T08:33:14.000000Z\",\n        \"id\": 11\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Edit",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"content-type": true
+						}
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "title",
+									"value": "Test",
+									"type": "text"
+								},
+								{
+									"key": "content",
+									"value": "Test Test In sed architecto incidunt error pariatur molestias. Suscipit provident quas et sed delectus. Tempora repudiandae voluptates fugiat consequuntur ut. Quia nemo quaerat deserunt ut sapiente unde animi dolores. Commodi asperiores quaerat reprehenderit voluptatem incidunt. Iure quia facilis voluptate nobis quo nesciunt velit dolorem. Saepe recusandae voluptas facere illo aliquid id et mollitia.",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{server.local}}/api/{{version}}/posts/5",
+							"host": [
+								"{{server.local}}"
+							],
+							"path": [
+								"api",
+								"{{version}}",
+								"posts",
+								"5"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Edit",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/x-www-form-urlencoded",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "title",
+											"value": "Test",
+											"type": "text"
+										},
+										{
+											"key": "content",
+											"value": "Test Test In sed architecto incidunt error pariatur molestias. Suscipit provident quas et sed delectus. Tempora repudiandae voluptates fugiat consequuntur ut. Quia nemo quaerat deserunt ut sapiente unde animi dolores. Commodi asperiores quaerat reprehenderit voluptatem incidunt. Iure quia facilis voluptate nobis quo nesciunt velit dolorem. Saepe recusandae voluptas facere illo aliquid id et mollitia.",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{server.local}}/api/{{version}}/posts/5",
+									"host": [
+										"{{server.local}}"
+									],
+									"path": [
+										"api",
+										"{{version}}",
+										"posts",
+										"5"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Fri, 30 Dec 2022 08:34:35 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Apache"
+								},
+								{
+									"key": "Vary",
+									"value": "Authorization"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=120, max=985"
+								},
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"success\",\n    \"message\": \"Post updated successfully\",\n    \"post\": {\n        \"id\": 5,\n        \"title\": \"Test\",\n        \"content\": \"Test Test In sed architecto incidunt error pariatur molestias. Suscipit provident quas et sed delectus. Tempora repudiandae voluptates fugiat consequuntur ut. Quia nemo quaerat deserunt ut sapiente unde animi dolores. Commodi asperiores quaerat reprehenderit voluptatem incidunt. Iure quia facilis voluptate nobis quo nesciunt velit dolorem. Saepe recusandae voluptas facere illo aliquid id et mollitia.\",\n        \"user_id\": 1,\n        \"created_at\": \"2022-12-30T05:50:48.000000Z\",\n        \"updated_at\": \"2022-12-30T08:34:35.000000Z\"\n    }\n}"
+						}
+					]
+				}
+			],
+			"auth": {
+				"type": "bearer",
+				"bearer": [
+					{
+						"key": "token",
+						"value": "{{token}}",
+						"type": "string"
+					}
+				]
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "{{token}}",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "server.local",
+			"value": "http://testwork1023",
+			"type": "string"
+		},
+		{
+			"key": "server.test",
+			"value": "http://testwork1023",
+			"type": "string"
+		},
+		{
+			"key": "version",
+			"value": "v1",
+			"type": "string"
+		},
+		{
+			"key": "token",
+			"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vdGVzdHdvcmsxMDIzL2FwaS92MS9hdXRoL2xvZ2luIiwiaWF0IjoxNjcyMzg1ODgxLCJleHAiOjE2NzIzODk0ODEsIm5iZiI6MTY3MjM4NTg4MSwianRpIjoiaG1oRUZHaHhIN0VhclNLMiIsInN1YiI6IjEiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.OeOx8eNA7p9COimPjAdxYkIekqyUtLLFkM_np-K1Bq0",
+			"type": "string"
+		}
+	]
+}
