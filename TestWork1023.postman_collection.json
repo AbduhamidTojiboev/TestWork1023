@@ -1796,14 +1796,14 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "{{server.local}}/api/{{version}}/users/3",
+							"raw": "{{server.local}}/api/{{version}}/roles/3",
 							"host": [
 								"{{server.local}}"
 							],
 							"path": [
 								"api",
 								"{{version}}",
-								"users",
+								"roles",
 								"3"
 							]
 						}
@@ -1815,15 +1815,15 @@
 								"method": "DELETE",
 								"header": [],
 								"url": {
-									"raw": "{{server.local}}/api/{{version}}/users/4",
+									"raw": "{{server.local}}/api/{{version}}/roles/3",
 									"host": [
 										"{{server.local}}"
 									],
 									"path": [
 										"api",
 										"{{version}}",
-										"users",
-										"4"
+										"roles",
+										"3"
 									]
 								}
 							},
@@ -1877,7 +1877,7 @@
 								}
 							],
 							"cookie": [],
-							"body": "{\n    \"status\": \"success\",\n    \"message\": \"User deleted successfully\"\n}"
+							"body": "{\n    \"status\": \"success\",\n    \"message\": \"Role deleted successfully\"\n}"
 						}
 					]
 				},

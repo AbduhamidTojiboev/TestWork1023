@@ -21,55 +21,12 @@ class RoleRepository extends BaseRepository implements RoleRepositoryContract
 
     /**
      * @param array $payload
-     * @return Role|null
-     */
-    public function create(array $payload): ?Role
-    {
-        $model = parent::create($payload);
-        $this->setPermissions($payload, $model);
-
-        return $model;
-    }
-
-    /**
-     * @param array $payload
      * @param Role $model
      * @return void
      */
-    private function setPermissions(array $payload, Role $model): void
+    public function setPermissions(array $payload, Role $model): void
     {
-        if (isset($payload['permissions_id'])) {
-            ($payload['permissions_id'] === null)
-                ? $model->permissions()->sync([])
-                : $model->permissions()->sync($payload['permissions_id']);
-        } else {
-            $model->permissions()->sync([]);
-        }
+        $model->permissions()->sync($payload);
     }
 
-    /**
-     * @param int $id
-     * @param array $payload
-     * @return Role|null
-     */
-    public function update(int $id, array $payload): ?Role
-    {
-        $model = parent::update($id, $payload);
-        $this->setPermissions($payload, $model);
-
-        return $model;
-    }
-
-
-    /**
-     * @param int $id
-     * @return bool|null
-     */
-    public function destroy(int $id): ?bool
-    {
-        $model = $this->findById($id);
-        $model->permissions()->sync([]);
-
-        return $model->delete();
-    }
 }

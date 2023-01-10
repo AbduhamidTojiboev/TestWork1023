@@ -22,29 +22,12 @@ class UserRepository extends BaseRepository implements UserRepositoryContract
 
     /**
      * @param array $payload
-     * @return User|null
+     * @param User $model
+     * @return void
      */
-    public function create(array $payload): ?User
+    public function setRoles(array $payload, User $model): void
     {
-        $model = parent::create($payload);
-        $this->setRoles($payload, $model);
-        $this->setPermissions($payload, $model);
-
-        return $model;
-    }
-
-    /**
-     * @param int $id
-     * @param array $payload
-     * @return User|null
-     */
-    public function update(int $id, array $payload): ?User
-    {
-        $model = parent::update($id, $payload);
-        $this->setRoles($payload, $model);
-        $this->setPermissions($payload, $model);
-
-        return $model;
+        $model->roles()->sync($payload);
     }
 
     /**
@@ -52,27 +35,9 @@ class UserRepository extends BaseRepository implements UserRepositoryContract
      * @param User $model
      * @return void
      */
-    private function setRoles(array $payload, User $model): void
+    public function setPermissions(array $payload, User $model): void
     {
-        if (isset($payload['roles_id'])) {
-            ($payload['roles_id'] === null) ? $model->roles()->sync([]) : $model->roles()->sync($payload['roles_id']);
-        } else {
-            $model->roles()->sync([]);
-        }
-    }
-
-    /**
-     * @param array $payload
-     * @param User $model
-     * @return void
-     */
-    private function setPermissions(array $payload, User $model): void
-    {
-        if (isset($payload['permissions_id'])) {
-            ($payload['permissions_id'] === null) ? $model->permissions()->sync([]) : $model->permissions()->sync($payload['permissions_id']);
-        } else {
-            $model->permissions()->sync([]);
-        }
+        $model->permissions()->sync($payload);
     }
 
     /**
@@ -84,6 +49,7 @@ class UserRepository extends BaseRepository implements UserRepositoryContract
         $model = $this->findById($id);
         $model->permissions()->sync([]);
         $model->roles()->sync([]);
+
         return $model->delete();
     }
 }
