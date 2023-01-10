@@ -6,12 +6,12 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\Role\RoleStoreRequest;
 use App\Http\Requests\Role\RoleUpdateRequest;
 use App\Repositories\Contract\PermissionRepositoryContract;
-use App\Repositories\Contract\RoleRepositoryContract;
+use App\Services\Contract\RoleServiceContract;
 use Illuminate\Http\Request;
 
 class RoleController extends Controller
 {
-    public function __construct(private RoleRepositoryContract $roleRepository,
+    public function __construct(private RoleServiceContract $roleService,
             private PermissionRepositoryContract $permissionRepository
     )
     {
@@ -28,7 +28,7 @@ class RoleController extends Controller
      */
     public function index()
     {
-        $roles = $this->roleRepository->all();
+        $roles = $this->roleService->all();
 
         return response()->json([
             'status' => 'success',
@@ -59,7 +59,7 @@ class RoleController extends Controller
      */
     public function store(RoleStoreRequest $request)
     {
-        $role = $this->roleRepository->create($request->validated());
+        $role = $this->roleService->create($request->validated());
 
         return response()->json([
             'status' => 'success',
@@ -76,7 +76,7 @@ class RoleController extends Controller
      */
     public function show($id)
     {
-        $role = $this->roleRepository->findById($id);
+        $role = $this->roleService->findById($id);
 
         return response()->json([
             'status' => 'success',
@@ -93,7 +93,7 @@ class RoleController extends Controller
     public function edit(int $id)
     {
         $permissions = $this->permissionRepository->list('display_name');
-        $role = $this->roleRepository->findById($id);
+        $role = $this->roleService->findById($id);
 
         return response()->json([
             'status' => 'success',
@@ -111,7 +111,7 @@ class RoleController extends Controller
      */
     public function update(RoleUpdateRequest $request, int $id)
     {
-        $role = $this->roleRepository->update($id, $request->validated());
+        $role = $this->roleService->update($id, $request->validated());
 
         return response()->json([
             'status' => 'success',
@@ -128,7 +128,7 @@ class RoleController extends Controller
      */
     public function destroy(int $id)
     {
-        $this->roleRepository->destroy($id);
+        $this->roleService->destroy($id);
 
         return response()->json([
             'status' => 'success',

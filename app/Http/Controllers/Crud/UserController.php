@@ -7,13 +7,13 @@ use App\Http\Requests\User\UserStoreRequest;
 use App\Http\Requests\User\UserUpdateRequest;
 use App\Repositories\Contract\PermissionRepositoryContract;
 use App\Repositories\Contract\RoleRepositoryContract;
-use App\Repositories\Contract\UserRepositoryContract;
+use App\Services\Contract\UserServiceContract;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 
 class UserController extends Controller
 {
-    public function __construct(private UserRepositoryContract $userRepository,
+    public function __construct(private UserServiceContract $userService,
             private RoleRepositoryContract $roleRepository,
             private PermissionRepositoryContract $permissionRepository
     )
@@ -31,7 +31,7 @@ class UserController extends Controller
      */
     public function index()
     {
-        $users = $this->userRepository->all();
+        $users = $this->userService->all();
 
         return response()->json([
             'status' => 'success',
@@ -64,7 +64,7 @@ class UserController extends Controller
      */
     public function store(UserStoreRequest $request)
     {
-        $user = $this->userRepository->create($this->hashPassword($request->validated()));
+        $user = $this->userService->create($request->validated());
 
         return response()->json([
             'status' => 'success',
@@ -81,7 +81,7 @@ class UserController extends Controller
      */
     public function show(int $id)
     {
-        $user = $this->userRepository->findById($id, ['*'], ['roles', 'permissions']);
+        $user = $this->userService->findById($id, ['*'], ['roles', 'permissions']);
 
         return response()->json([
             'status' => 'success',
@@ -99,7 +99,7 @@ class UserController extends Controller
     {
         $roles = $this->roleRepository->list('display_name');
         $permissions = $this->permissionRepository->list('display_name');
-        $user = $this->userRepository->findById($id, ['*'], ['roles', 'permissions']);
+        $user = $this->userService->findById($id, ['*'], ['roles', 'permissions']);
 
         return response()->json([
             'status' => 'success',
@@ -118,7 +118,7 @@ class UserController extends Controller
      */
     public function update(UserUpdateRequest $request, int $id)
     {
-        $user = $this->userRepository->update($id, $this->hashPassword($request->validated()));
+        $user = $this->userService->update($id, $request->validated());
 
         return response()->json([
             'status' => 'success',
@@ -135,7 +135,7 @@ class UserController extends Controller
      */
     public function destroy(int $id)
     {
-        $this->userRepository->destroy($id);
+        $this->userService->destroy($id);
 
         return response()->json([
             'status' => 'success',
@@ -143,16 +143,5 @@ class UserController extends Controller
         ]);
     }
 
-    /**
-     * @param array $data
-     * @return array
-     */
-    private function hashPassword(array $data): array
-    {
-        if (isset($data['password'])){
-            $data['password'] = Hash::make($data['password']);
-        }
 
-        return $data;
-    }
 }

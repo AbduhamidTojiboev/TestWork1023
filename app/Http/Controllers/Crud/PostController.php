@@ -46,7 +46,7 @@ class PostController extends Controller
      */
     public function store(PostStoreRequest $request)
     {
-        $post = $this->postRepository->create($this->setUserId($request->validated()));
+        $post = $this->postRepository->create($request->validated());
 
         return response()->json([
             'status' => 'success',
@@ -95,7 +95,7 @@ class PostController extends Controller
      */
     public function update(PostUpdateRequest $request, int $id)
     {
-        $post = $this->postRepository->update($id, $this->setUserId($request->validated()));
+        $post = $this->postRepository->update($id, $request->validated());
 
         return response()->json([
             'status' => 'success',
@@ -118,18 +118,5 @@ class PostController extends Controller
             'status' => 'success',
             'message' => 'Post deleted successfully',
         ]);
-    }
-
-    /**
-     * Set user_id in payload
-     *
-     * @param array $payload
-     * @return array
-     */
-    private function setUserId(array $payload): array
-    {
-        $payload['user_id'] = Auth::id();
-
-        return $payload;
     }
 }
